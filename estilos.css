@@ -1,0 +1,160 @@
+/* Estilo general del cuerpo */
+body {
+    font-family: 'Nunito', sans-serif; /* Corregidas las comillas ’ por ' */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Cabecera */
+.cabecera {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    background-color: rgba(7, 168, 66, 0.4);
+    padding: 10px 30px;
+      font-family: "EB Garamond", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+/* Logo */
+.logo {
+    height: 150px; 
+    width: auto; 
+}
+
+/* Lista del menú */
+.menu {
+    list-style: none; 
+    display: flex; 
+    gap: 25px; 
+    margin: 0;
+    padding: 0;
+}
+
+/* Enlaces del menú */
+.menu a {
+    text-decoration: none; 
+    color: white;
+    font-weight: 700; 
+    font-size: 18px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background 0.3s ease; /* Corregido el espacio en 0.3 s */
+}
+
+.menu a:hover {
+    background-color: #ec962b; 
+    border-radius: 30px; 
+    color: black;
+}
+
+/* Contenedor principal del carrusel */
+.carrusel {
+    max-width: 900px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+/* Oculta los radio buttons */
+.carrusel input[type="radio"] {
+    display: none;
+}
+
+/* Ventana visible del carrusel */
+.carrusel-contenedor {
+    width: 100%;
+    overflow: hidden; 
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+/* Banda que contiene todas las imágenes */
+.diapositivas {
+    display: flex;
+    width: 300%; /* 3 imágenes => 300% */
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Cada imagen ocupa un tercio del contenedor */
+.diapositivas img {
+    width: 33.333%;
+    height: 400px;
+    object-fit: cover; 
+}
+
+/* Controles de navegación (puntos) */
+.navegacion {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.navegacion label {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.navegacion label:hover {
+    background-color: #FF8C00;
+}
+
+/* Desplazamiento según el radio seleccionado */
+#diapo1:checked ~ .carrusel-contenedor .diapositivas {
+    transform: translateX(0);
+}
+#diapo2:checked ~ .carrusel-contenedor .diapositivas {
+    transform: translateX(-33.333%);
+}
+#diapo3:checked ~ .carrusel-contenedor .diapositivas {
+    transform: translateX(-66.666%);
+}
+
+/* Cambia el color del punto activo (Corregido el espacio antes de [for]) */
+#diapo1:checked ~ .carrusel-contenedor .navegacion label[for="diapo1"],
+#diapo2:checked ~ .carrusel-contenedor .navegacion label[for="diapo2"],
+#diapo3:checked ~ .carrusel-contenedor .navegacion label[for="diapo3"] {
+    background-color: #0066CC;
+}
+
+/* Pie de página */
+.pie-pagina {
+    background-color: #333;
+    color: white;
+    padding: 25px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; 
+    font-size: 16px;
+}
+
+.redes-sociales a {
+    color: #FF8C00;
+    text-decoration: none;
+    margin-right: 20px;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+.redes-sociales a:hover {
+    color: white;
+}
+
+.datos-sitio {
+    text-align: right;
+}
+
+.datos-sitio p {
+    margin: 5px 0;
+}
